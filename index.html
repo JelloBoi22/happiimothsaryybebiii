@@ -1,0 +1,1358 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Darleng ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff6fa;
+    color: #4a2634;
+    overflow-x: hidden;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #ffdce8;
+    border-radius: 50%;
+    filter: blur(100px);
+    top: -200px;
+    left: -200px;
+    opacity: .55;
+    pointer-events: none;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #f9d6e4;
+    border-radius: 50%;
+    filter: blur(110px);
+    bottom: -250px;
+    right: -200px;
+    opacity: .5;
+    pointer-events: none;
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.hearts {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    bottom: -60px;
+    opacity: 0;
+    animation: floatHeart linear infinite;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .55;
+    }
+
+    90% {
+        opacity: .4;
+    }
+
+    100% {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   PAGES
+========================= */
+
+.page {
+    min-height: 100vh;
+    padding: 30px 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.page.active {
+    display: flex;
+}
+
+/* =========================
+   OPENING
+========================= */
+
+.opening {
+    width: min(720px, 100%);
+    text-align: center;
+    animation: fadeUp .8s ease;
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.small {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    color: #bd6b88;
+    margin-bottom: 18px;
+}
+
+.opening h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(50px, 10vw, 90px);
+    line-height: .95;
+    color: #7b304c;
+}
+
+.opening h1 span {
+    color: #d96189;
+    font-style: italic;
+}
+
+.opening p {
+    max-width: 570px;
+    margin: 28px auto 0;
+    color: #76515e;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+    margin-top: 32px;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 28px;
+    background: #9f4567;
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 12px 28px rgba(159,69,103,.25);
+    transition: .25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 17px 35px rgba(159,69,103,.35);
+}
+
+.btn:active {
+    transform: scale(.95);
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+    width: min(950px, 100%);
+    text-align: center;
+}
+
+.content h2,
+.transition h2 {
+    font-family: 'DM Serif Display', serif;
+    color: #7b304c;
+    font-size: clamp(40px, 7vw, 65px);
+    line-height: 1;
+}
+
+.subtitle {
+    margin: 18px auto 35px;
+    color: #805565;
+    line-height: 1.8;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    width: min(820px, 100%);
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.card {
+    min-height: 190px;
+    padding: 28px;
+    border-radius: 28px;
+    background: rgba(255,255,255,.8);
+    border: 1px solid rgba(159,69,103,.12);
+    box-shadow: 0 12px 35px rgba(87,37,56,.08);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: .3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(87,37,56,.13);
+}
+
+.card:active {
+    transform: scale(.96);
+}
+
+.card .icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    color: #7b304c;
+    font-size: 17px;
+    margin-bottom: 7px;
+}
+
+.card p {
+    color: #805565;
+    font-size: 13px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(60,25,40,.58);
+    backdrop-filter: blur(8px);
+    z-index: 50;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-box {
+    width: min(560px, 100%);
+    background: #fffafb;
+    padding: 42px 30px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 25px 70px rgba(0,0,0,.2);
+    animation: modalPop .35s ease;
+}
+
+@keyframes modalPop {
+
+    from {
+        transform: scale(.75);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.big-icon {
+    font-size: 58px;
+    margin-bottom: 12px;
+}
+
+.modal-box h3 {
+    font-family: 'DM Serif Display', serif;
+    color: #7b304c;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.modal-box p {
+    color: #704957;
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.close {
+    margin-top: 25px;
+    border: none;
+    padding: 11px 22px;
+    border-radius: 30px;
+    background: #f4dbe5;
+    color: #7b304c;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* =========================
+   TRANSITION
+========================= */
+
+.transition {
+    max-width: 700px;
+    text-align: center;
+}
+
+.transition .question {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #bd6b88;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.transition h2 span {
+    color: #d96189;
+    font-style: italic;
+}
+
+.transition p {
+    margin-top: 25px;
+    color: #76515e;
+    line-height: 1.9;
+}
+
+/* =========================
+   MEET REVEAL
+========================= */
+
+.meet {
+    width: min(800px, 100%);
+    text-align: center;
+}
+
+.meet .tiny {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    color: #bd6b88;
+}
+
+.meet h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(45px, 9vw, 82px);
+    line-height: .98;
+    color: #7b304c;
+    margin: 22px 0;
+}
+
+.meet h2 span {
+    display: block;
+    color: #d96189;
+    font-style: italic;
+}
+
+.date-box {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 50px;
+    background: #f6dce6;
+    color: #7b304c;
+    font-weight: 600;
+    margin: 12px 0 20px;
+}
+
+.meet p {
+    max-width: 620px;
+    margin: 12px auto;
+    color: #704957;
+    line-height: 1.9;
+}
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-wrap {
+    width: min(760px, 100%);
+}
+
+.letter {
+    background: #fffdfd;
+    border-radius: 30px;
+    padding: clamp(28px, 6vw, 55px);
+    box-shadow: 0 20px 50px rgba(85,36,55,.1);
+    position: relative;
+}
+
+.letter::after {
+    content: "♥";
+    position: absolute;
+    top: 25px;
+    right: 28px;
+    color: #edb1c6;
+    font-size: 30px;
+}
+
+.letter h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: #7b304c;
+    margin-bottom: 25px;
+}
+
+.letter p {
+    color: #674653;
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 18px;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 30px;
+    color: #9f4567;
+    font-family: 'DM Serif Display', serif;
+    font-size: 25px;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final {
+    text-align: center;
+}
+
+.heart-big {
+    font-size: 85px;
+    animation: heartbeat 1.3s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.final h2 {
+    font-family: 'DM Serif Display', serif;
+    color: #7b304c;
+    font-size: clamp(42px, 8vw, 72px);
+    line-height: 1;
+    margin: 15px 0;
+}
+
+.final p {
+    color: #76515e;
+    line-height: 1.9;
+}
+
+/* =========================
+   HEART BURST
+========================= */
+
+.burst-heart {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    font-size: 18px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 650px) {
+
+    .page {
+        padding: 25px 15px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        min-height: 165px;
+    }
+
+    .letter {
+        padding: 28px 22px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- FLOATING HEARTS -->
+<div class="hearts" id="hearts"></div>
+
+
+<!-- =========================
+     PAGE 1
+========================= -->
+
+<section class="page active" id="page1">
+
+    <div class="opening">
+
+        <div class="small">
+            A little something for you
+        </div>
+
+        <h1>
+            For my<br>
+            <span>Darleng</span> ❤️
+        </h1>
+
+        <p>
+            I know you're busy reviewing right now,
+            so I made you something small.
+            Not to distract you from studying...
+            but to remind you that someone is
+            always cheering for you.
+        </p>
+
+        <button class="btn" onclick="nextPage(2)">
+            Open this, my love 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 2
+========================= -->
+
+<section class="page" id="page2">
+
+    <div class="content">
+
+        <div class="small">
+            For the tired moments
+        </div>
+
+        <h2>
+            Kapag pagod ka na...
+        </h2>
+
+        <p class="subtitle">
+            Click each one whenever you need
+            a little reminder. ❤️
+        </p>
+
+        <div class="cards">
+
+            <div class="card" onclick="openMessage(0)">
+                <div class="icon">💗</div>
+
+                <h3>
+                    Pagod ka na?
+                </h3>
+
+                <p>
+                    Tap mo ako.
+                </p>
+            </div>
+
+
+            <div class="card" onclick="openMessage(1)">
+                <div class="icon">🌷</div>
+
+                <h3>
+                    Hindi kailangang perfect.
+                </h3>
+
+                <p>
+                    Progress is enough.
+                </p>
+            </div>
+
+
+            <div class="card" onclick="openMessage(2)">
+                <div class="icon">🫶🏻</div>
+
+                <h3>
+                    I'm proud of you.
+                </h3>
+
+                <p>
+                    Even for the little things.
+                </p>
+            </div>
+
+
+            <div class="card" onclick="openMessage(3)">
+                <div class="icon">⭐</div>
+
+                <h3>
+                    One more page.
+                </h3>
+
+                <p>
+                    One more topic.
+                </p>
+            </div>
+
+        </div>
+
+
+        <button class="btn" onclick="nextPage(3)">
+            I have one more thing... ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 3
+========================= -->
+
+<section class="page" id="page3">
+
+    <div class="transition">
+
+        <div class="question">
+            Before you continue studying...
+        </div>
+
+        <h2>
+            I want you to<br>
+            <span>remember something.</span>
+        </h2>
+
+        <p>
+            You might feel tired.
+            You might feel pressured.
+            You might even feel like you're not doing enough.
+            But please don't forget how far you've already come.
+        </p>
+
+        <button class="btn" onclick="nextPage(4)">
+            What is it? 🥺
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 4
+========================= -->
+
+<section class="page" id="page4">
+
+    <div class="meet">
+
+        <div class="tiny">
+            Here's your little reward
+        </div>
+
+        <h2>
+            Konting tiis na lang...
+            <span>makikita na kita. ❤️</span>
+        </h2>
+
+        <div class="date-box">
+            NEXT WEEK 🥹❤️
+        </div>
+
+        <p>
+            Kaya laban lang muna, my love.
+            Finish what you can, rest when you need to,
+            and don't be too hard on yourself.
+        </p>
+
+        <p>
+            Kasi pagkatapos ng lahat ng pagod na 'yan...
+            <br>
+            <strong>
+                magkikita na tayo ulit.
+            </strong>
+            🫶🏻
+        </p>
+
+        <button class="btn" onclick="nextPage(5)">
+            There's a letter for you 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 5
+========================= -->
+
+<section class="page" id="page5">
+
+    <div class="letter-wrap">
+
+        <div class="letter">
+
+            <h3>
+                Happy Monthsary, Darleng. 🥹❤️
+            </h3>
+
+            <p>
+                I know you're busy reviewing right now,
+                kaya gusto ko lang ipaalala sa'yo na
+                <strong>I'm so proud of you.</strong>
+            </p>
+
+            <p>
+                Kapag napagod ka, pahinga ka muna.
+                Kapag may hindi ka maintindihan,
+                take your time.
+                Hindi mo kailangang matapos lahat
+                nang isang bagsakan.
+            </p>
+
+            <p>
+                One page at a time.
+                One topic at a time.
+                One day at a time.
+            </p>
+
+            <p>
+                Hindi mo kailangang maging perfect.
+                Ang importante, ginagawa mo ang best mo.
+                And even when you feel like you're not
+                doing enough, please remember that
+                <strong>I believe in you.</strong>
+            </p>
+
+            <p>
+                Hindi man ako katabi mo ngayon habang
+                nagre-review ka, sana maramdaman mong
+                kasama mo ako sa bawat page na binabasa mo,
+                bawat problemang sinusubukan mong sagutan,
+                at bawat pagod na nalalampasan mo.
+            </p>
+
+            <p>
+                And whenever things get overwhelming,
+                remember na may isang taong palaging
+                naniniwala sa'yo.
+                <strong>Ako 'yon. ❤️</strong>
+            </p>
+
+            <p>
+                So for now, review well, my love.
+                Do your best, then give yourself time
+                to rest.
+            </p>
+
+            <p>
+                At kapag feeling mo sobrang hirap na...
+                isipin mo na lang:
+                <strong>
+                    konting araw na lang, magkikita na tayo.
+                </strong>
+                🥹
+            </p>
+
+            <div class="signature">
+                I love you so much.<br>
+                — Jello ❤️
+            </div>
+
+        </div>
+
+
+        <div style="text-align:center;">
+
+            <button class="btn" onclick="nextPage(6)">
+                One last thing... ❤️
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 6
+========================= -->
+
+<section class="page" id="page6">
+
+    <div class="final">
+
+        <div class="heart-big">
+            ❤️
+        </div>
+
+        <h2>
+            You can do this,<br>
+            Darleng.
+        </h2>
+
+        <p>
+            I'm always here.<br>
+            I'm always proud of you.<br>
+            And I'm always cheering for you.
+        </p>
+
+        <br>
+
+        <p>
+            <strong>
+                Happy Monthsary, my love. 🫶🏻
+            </strong>
+        </p>
+
+        <p style="margin-top:15px;">
+            Now go review. 📚❤️
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MOTIVATION MODAL
+========================= -->
+
+<div class="modal" id="modal">
+
+    <div class="modal-box">
+
+        <div class="big-icon" id="modalIcon">
+            💗
+        </div>
+
+        <h3 id="modalTitle">
+            You got this.
+        </h3>
+
+        <p id="modalText">
+            Message
+        </p>
+
+        <button class="close" onclick="closeMessage()">
+            Thank you, Jello ❤️
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   AUDIO SYSTEM
+===================================================== */
+
+let audioContext = null;
+
+
+/* Create audio only after user clicks */
+function initAudio() {
+
+    if (!audioContext) {
+
+        audioContext =
+            new (
+                window.AudioContext ||
+                window.webkitAudioContext
+            )();
+
+    }
+
+    if (audioContext.state === "suspended") {
+
+        audioContext.resume();
+
+    }
+
+}
+
+
+/* Cute soft click sound */
+function playClickSound() {
+
+    try {
+
+        initAudio();
+
+        const now =
+            audioContext.currentTime;
+
+
+        const oscillator =
+            audioContext.createOscillator();
+
+        const gain =
+            audioContext.createGain();
+
+
+        oscillator.type = "sine";
+
+
+        oscillator.frequency.setValueAtTime(
+            650,
+            now
+        );
+
+
+        oscillator.frequency.exponentialRampToValueAtTime(
+            900,
+            now + 0.10
+        );
+
+
+        gain.gain.setValueAtTime(
+            0.0001,
+            now
+        );
+
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.13,
+            now + 0.015
+        );
+
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.0001,
+            now + 0.20
+        );
+
+
+        oscillator.connect(gain);
+
+        gain.connect(
+            audioContext.destination
+        );
+
+
+        oscillator.start(now);
+
+        oscillator.stop(
+            now + 0.20
+        );
+
+    }
+
+    catch(error) {
+
+        console.log(
+            "Audio unavailable:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   MAKE ALL BUTTONS HAVE SOUND
+===================================================== */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        const button =
+            event.target.closest("button");
+
+        if (button) {
+
+            playClickSound();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+const heartsContainer =
+    document.getElementById("hearts");
+
+
+const heartSymbols = [
+    "❤️",
+    "💕",
+    "💗",
+    "💖",
+    "♡"
+];
+
+
+for (
+    let i = 0;
+    i < 30;
+    i++
+) {
+
+    const heart =
+        document.createElement("div");
+
+
+    heart.className =
+        "heart";
+
+
+    heart.innerHTML =
+        heartSymbols[
+            Math.floor(
+                Math.random() *
+                heartSymbols.length
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random() * 100 + "%";
+
+
+    heart.style.fontSize =
+        (12 + Math.random() * 20) + "px";
+
+
+    heart.style.animationDuration =
+        (7 + Math.random() * 10) + "s";
+
+
+    heart.style.animationDelay =
+        Math.random() * 10 + "s";
+
+
+    heartsContainer.appendChild(
+        heart
+    );
+
+}
+
+
+/* =====================================================
+   PAGE NAVIGATION
+===================================================== */
+
+function nextPage(number) {
+
+    document
+        .querySelectorAll(".page")
+        .forEach(
+            function(page) {
+
+                page.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+    const target =
+        document.getElementById(
+            "page" + number
+        );
+
+
+    if (target) {
+
+        target.classList.add(
+            "active"
+        );
+
+    }
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =====================================================
+   MOTIVATION MESSAGES
+===================================================== */
+
+const messages = [
+
+    {
+        icon: "💗",
+
+        title: "Pahinga ka muna.",
+
+        text:
+        "Darleng, kapag pagod ka na, hindi ibig sabihin na kailangan mong pilitin ang sarili mo. Pahinga ka muna. Breathe. Drink some water. Then kapag ready ka na ulit, continue. Hindi ka robot, my love."
+    },
+
+
+    {
+        icon: "🌷",
+
+        title: "Hindi kailangang perfect.",
+
+        text:
+        "Hindi mo kailangang maintindihan agad lahat. Hindi mo kailangang maging perfect sa bawat review session. Ang mahalaga, you're trying. Kahit maliit na progress, progress pa rin."
+    },
+
+
+    {
+        icon: "🫶🏻",
+
+        title: "I'm proud of you.",
+
+        text:
+        "I'm proud of you—not only kapag may natatapos ka, pero kahit sa mga araw na nahihirapan ka pero pinipili mo pa ring bumangon at magpatuloy. I'm genuinely proud of you."
+    },
+
+
+    {
+        icon: "⭐",
+
+        title: "One more page.",
+
+        text:
+        "One more page, one more topic, one more little step. Huwag mong isipin lahat nang sabay-sabay. Focus ka lang sa ginagawa mo ngayon. Kaya mo 'yan, Darleng. I believe in you."
+    }
+
+];
+
+
+/* =====================================================
+   OPEN MOTIVATION
+===================================================== */
+
+function openMessage(index) {
+
+    document
+        .getElementById("modalIcon")
+        .innerText =
+        messages[index].icon;
+
+
+    document
+        .getElementById("modalTitle")
+        .innerText =
+        messages[index].title;
+
+
+    document
+        .getElementById("modalText")
+        .innerText =
+        messages[index].text;
+
+
+    document
+        .getElementById("modal")
+        .classList.add("show");
+
+}
+
+
+/* =====================================================
+   CLOSE MOTIVATION
+===================================================== */
+
+function closeMessage() {
+
+    document
+        .getElementById("modal")
+        .classList.remove("show");
+
+}
+
+
+/* =====================================================
+   CLICK OUTSIDE MODAL
+===================================================== */
+
+document
+    .getElementById("modal")
+    .addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target === this
+            ) {
+
+                closeMessage();
+
+            }
+
+        }
+    );
+
+
+/* =====================================================
+   HEART BURST
+===================================================== */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        const button =
+            event.target.closest("button");
+
+
+        if (!button) return;
+
+
+        for (
+            let i = 0;
+            i < 7;
+            i++
+        ) {
+
+            const heart =
+                document.createElement(
+                    "div"
+                );
+
+
+            heart.className =
+                "burst-heart";
+
+
+            heart.innerHTML =
+                "❤️";
+
+
+            heart.style.left =
+                event.clientX + "px";
+
+
+            heart.style.top =
+                event.clientY + "px";
+
+
+            const x =
+                (Math.random() - .5) *
+                160;
+
+
+            const y =
+                (Math.random() - .5) *
+                160;
+
+
+            heart.animate(
+
+                [
+                    {
+                        transform:
+                            "translate(0,0) scale(1)",
+                        opacity: 1
+                    },
+
+                    {
+                        transform:
+                            `translate(${x}px,${y}px) scale(0)`,
+                        opacity: 0
+                    }
+
+                ],
+
+                {
+                    duration: 850,
+                    easing: "ease-out"
+                }
+
+            );
+
+
+            document.body.appendChild(
+                heart
+            );
+
+
+            setTimeout(
+                function() {
+
+                    heart.remove();
+
+                },
+                850
+            );
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
+```
